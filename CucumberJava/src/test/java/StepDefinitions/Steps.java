@@ -1,14 +1,8 @@
 package StepDefinitions;
 
 
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,6 +15,7 @@ import seleniumgluecode.Hooks;
 public class Steps 
 {
 	private WebDriver driver = Hooks.getDriver();
+	
 	@Given("User is on Home Page")
 	public void user_is_on_home_page() {
 	String titleHomePage = "Aspiration | Green Financial Services";

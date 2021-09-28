@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import browser_manager.DriverManagerFactory;
 import browser_manager.driverType;
+import dataProvider.ConfigFileReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -12,6 +13,7 @@ public class Hooks
 {
 	
 private static WebDriver driver;
+ConfigFileReader configFileReader;
 private browser_manager.DriverManager driverManager;
 
     @Before
@@ -22,7 +24,7 @@ private browser_manager.DriverManager driverManager;
     	driverManager = DriverManagerFactory.getManager(driverType.CHROME);
     	driver = driverManager.getDriver();
     	//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-    	driver.get("https://www.aspiration.com");
+    	driver.get(configFileReader.getApplicationUrl());
     	driver.manage().window().maximize();
         
     }
